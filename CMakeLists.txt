@@ -3,4 +3,4 @@ project(laboratory_2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(laboratory_2 main.cpp)
+add_executable(laboratory_2 main.cpp DrawingWindow.cpp DrawingWindow.h Window.cpp Window.h)

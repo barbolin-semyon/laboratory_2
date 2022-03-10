@@ -1,6 +1,9 @@
 #include <iostream>
+#include "DrawingWindow.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Window w;
+    DrawingWindow dr;
+
     return 0;
 }
