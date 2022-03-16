@@ -62,7 +62,7 @@ void DrawingWindow::draw() {
     drawPaddingTop(window->getLeftUpY());
     drawTitle(window->getTitle(), window->getLeftUpX());
     drawBody(window->getWidth(), window->getHeight(), window->getLeftUpX());
-    cout << endl << "Write step to move(w, a, s, d)" << endl;
+    cout << endl << "Write 'w', 'a', 's' or 'd' for moving window or 'r' for change color" << endl;
 }
 
 void DrawingWindow::drawPaddingTop(int value) {
@@ -103,27 +103,15 @@ void DrawingWindow::updateWindow() {
 
 
 void DrawingWindow::moveWindow() {
-    while(getchar()) {
-        if (getchar() == 'd') {
-            window->operator++();
-
+    while(char s = getchar()) {
+        switch (s) {
+            case 'd': window->operator++(); break;
+            case 'a': window->operator--(); break;
+            case 'w': window->operator++(0); break;
+            case 's': window->operator--(0); break;
+            case 'r': window->operator!(); changeColor(window->getColorCode()); break;
         }
-
-        if (getchar() == 'a') {
-            window->operator--();
-        }
-
-        if (getchar() == 'w') {
-            window->operator++(0);
-        }
-
-        if (getchar() == 's') {
-            window->operator--(0);
-        }
-
         updateWindow();
-
-
     }
 }
 

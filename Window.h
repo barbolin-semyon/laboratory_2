@@ -21,6 +21,7 @@ public:
     Window& operator++(int a);
     Window& operator--(int a);
     Window& operator--();
+    Window& operator !();
 
 private:
     string title;

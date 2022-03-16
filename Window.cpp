@@ -61,6 +61,12 @@ Window &Window::operator--(int a) {
     return *this;
 }
 
+Window &Window::operator!() {
+    string s = "123456789ABCDEF";
+    colorCode = to_string((rand()%16));
+    return *this;
+}
+
 
 
 
