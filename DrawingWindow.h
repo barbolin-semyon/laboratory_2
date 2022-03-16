@@ -16,11 +16,19 @@ class Window;
 class DrawingWindow {
 public:
     DrawingWindow(Window * window);
-    DrawingWindow(void);
-private:
+    DrawingWindow();
+    void registerWindow();
+    void changeColor(string colorCode);
 
+private:
     Window * initFieldsWindow();
     Window * window;
+    void draw();
+    void clear();
+    void drawPaddingTop(int value);
+    void drawPaddingLeft(int value);
+    void drawTitle(string title, int paddingLeftValue);
+    void drawBody(int width, int height, int paddingLeftValue);
 };
 
 #endif
