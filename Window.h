@@ -17,12 +17,18 @@ public:
     int getLeftUpY();
     string getColorCode();
 
+    Window& operator++();
+    Window& operator++(int a);
+    Window& operator--(int a);
+    Window& operator--();
+
 private:
     string title;
     int width;
     int height;
     int leftUpX;
     int leftUpY;
+
     string colorCode;
 };
 

@@ -36,7 +36,41 @@ int Window::getLeftUpX() {
 int Window::getLeftUpY() {
     return leftUpY;
 }
-
+using namespace std;
 string Window::getColorCode() {
     return colorCode;
 }
+
+Window& Window::operator++() {
+    leftUpX++;
+    return *this;
+}
+
+Window& Window::operator++(int a) {
+    leftUpY--;
+    return *this;
+}
+
+Window &Window::operator--() {
+    leftUpX--;
+    return *this;
+}
+
+Window &Window::operator--(int a) {
+    leftUpY++;
+    return *this;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -62,7 +62,7 @@ void DrawingWindow::draw() {
     drawPaddingTop(window->getLeftUpY());
     drawTitle(window->getTitle(), window->getLeftUpX());
     drawBody(window->getWidth(), window->getHeight(), window->getLeftUpX());
-    system("pause");
+    cout << endl << "Write step to move(w, a, s, d)" << endl;
 }
 
 void DrawingWindow::drawPaddingTop(int value) {
@@ -93,6 +93,37 @@ void DrawingWindow::drawBody(int width, int height, int paddingLeftValue) {
             cout << "#";
         }
         cout << endl;
+    }
+}
+
+void DrawingWindow::updateWindow() {
+    clear();
+    draw();
+}
+
+
+void DrawingWindow::moveWindow() {
+    while(getchar()) {
+        if (getchar() == 'd') {
+            window->operator++();
+
+        }
+
+        if (getchar() == 'a') {
+            window->operator--();
+        }
+
+        if (getchar() == 'w') {
+            window->operator++(0);
+        }
+
+        if (getchar() == 's') {
+            window->operator--(0);
+        }
+
+        updateWindow();
+
+
     }
 }
 

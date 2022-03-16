@@ -17,8 +17,7 @@ class DrawingWindow {
 public:
     DrawingWindow(Window * window);
     DrawingWindow();
-    void registerWindow();
-    void changeColor(string colorCode);
+    void moveWindow();
 
 private:
     Window * initFieldsWindow();
@@ -29,6 +28,8 @@ private:
     void drawPaddingLeft(int value);
     void drawTitle(string title, int paddingLeftValue);
     void drawBody(int width, int height, int paddingLeftValue);
+    void changeColor(string colorCode);
+    void updateWindow();
 };
 
 #endif
